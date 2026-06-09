@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase';
 import './Contact.css';
 
 const Contact = () => {
@@ -10,15 +12,28 @@ const Contact = () => {
     service: 'residential',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Thank you for contacting ims solar solutions! We will get back to you shortly.');
-    setFormData({ name: '', phone: '', email: '', service: 'residential', message: '' });
+    setIsSubmitting(true);
+    try {
+      await addDoc(collection(db, 'enquiries'), {
+        ...formData,
+        createdAt: serverTimestamp()
+      });
+      alert('Thank you for contacting ims solar solutions! We will get back to you shortly.');
+      setFormData({ name: '', phone: '', email: '', service: 'residential', message: '' });
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      alert('Sorry, there was an error submitting your request. Please try again or contact us directly via phone.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -107,8 +122,8 @@ const Contact = () => {
                 <textarea id="message" name="message" rows="4" required value={formData.message} onChange={handleChange}></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary btn-submit">
-                <Send size={18} /> Send Request
+              <button type="submit" className="btn btn-primary btn-submit" disabled={isSubmitting}>
+                <Send size={18} /> {isSubmitting ? 'Sending...' : 'Send Request'}
               </button>
             </form>
           </div>

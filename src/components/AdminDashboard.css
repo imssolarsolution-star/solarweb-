@@ -1,0 +1,158 @@
+.admin-dashboard {
+  background-color: var(--color-surface);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: white;
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  border-color: #DC2626;
+  color: #DC2626;
+}
+
+.logout-btn:hover {
+  background-color: #DC2626;
+  color: white;
+}
+
+.dashboard-main {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.dashboard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-controls h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.enquiries-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.enquiries-table th, 
+.enquiries-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.enquiries-table th {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  white-space: nowrap;
+}
+
+.enquiries-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.date-cell {
+  white-space: nowrap;
+}
+
+.time-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-left: 1.5rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.icon-muted {
+  color: var(--color-text-muted);
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-details a {
+  color: var(--color-text);
+}
+
+.contact-details a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.badge-service {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-secondary);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.message-cell {
+  min-width: 300px;
+  max-width: 500px;
+  line-height: 1.5;
+}

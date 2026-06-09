@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FloatingWidgets from './components/FloatingWidgets';
@@ -12,21 +13,12 @@ import Process from './components/Process';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import Admin from './pages/Admin';
 import './App.css';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
-function App() {
+function HomePage({ theme, toggleTheme }) {
   useScrollReveal();
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
-
   return (
     <div className="app">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
@@ -45,6 +37,25 @@ function App() {
       <Footer />
       <FloatingWidgets />
     </div>
+  );
+}
+
+function App() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage theme={theme} toggleTheme={toggleTheme} />} />
+      <Route path="/admin" element={<Admin />} />
+    </Routes>
   );
 }
 
