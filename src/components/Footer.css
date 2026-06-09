@@ -27,45 +27,25 @@
   }
 }
 
-.footer-logo {
+.brand-col {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
   justify-content: center;
-  gap: 0.3rem;
   margin-bottom: 1.5rem;
   text-decoration: none;
 }
 
 .footer-logo .brand-logo {
-  height: 52px;
+  height: 85px;
   width: auto;
   object-fit: contain;
   display: block;
-}
-
-.footer-logo .logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  line-height: 1.1;
-}
-
-.footer-logo .logo-name {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 850;
-  color: #fff;
-  letter-spacing: -0.5px;
-}
-
-.footer-logo .logo-sub {
-  font-size: 0.75rem;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  font-weight: 700;
 }
 
 .footer-desc {

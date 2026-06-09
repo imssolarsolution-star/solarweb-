@@ -9,10 +9,6 @@ const Footer = () => {
         <div className="footer-col brand-col">
           <a href="#home" className="footer-logo">
             <img src="/logo.png" alt="ims solar solutions" className="brand-logo" />
-            <div className="logo-text">
-              <span className="logo-name">ims</span>
-              <span className="logo-sub">solar solutions</span>
-            </div>
           </a>
           <p className="footer-desc">
             Tamil Nadu's premier solar energy provider. Empowering homes and businesses with clean, sustainable, and cost-effective solar power systems.
