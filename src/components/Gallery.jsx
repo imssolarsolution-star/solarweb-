@@ -1,55 +1,21 @@
 import React from 'react';
 import './Gallery.css';
-import resSolar from '../assets/residential_solar_1780934831950.png';
-import comSolar from '../assets/commercial_solar_1780934870528.png';
-import indSolar from '../assets/industrial_solar_1780934884899.png';
 
 const Gallery = () => {
-  const projects = [
-    {
-      id: 1,
-      image: resSolar,
-      title: 'Residential 5kW System',
-      category: 'Residential',
-    },
-    {
-      id: 2,
-      image: comSolar,
-      title: 'Commercial Office 50kW',
-      category: 'Commercial',
-    },
-    {
-      id: 3,
-      image: indSolar,
-      title: 'Industrial Plant 250kW',
-      category: 'Industrial',
-    },
-    {
-      id: 4,
-      image: resSolar,
-      title: 'Luxury Home 10kW',
-      category: 'Residential',
-    },
-    {
-      id: 5,
-      image: indSolar,
-      title: 'Factory Warehouse 500kW',
-      category: 'Industrial',
-    },
-    {
-      id: 6,
-      image: comSolar,
-      title: 'Retail Store 20kW',
-      category: 'Commercial',
-    }
-  ];
+  // We have 14 work photos in public/Photos
+  const projects = Array.from({ length: 14 }, (_, i) => ({
+    id: i + 1,
+    image: `/Photos/work-${i + 1}.jpeg`,
+    title: `Solar Installation Project ${i + 1}`,
+    category: 'Our Work',
+  }));
 
   return (
     <section id="projects" className="section bg-surface">
       <div className="container">
         <div className="section-header text-center reveal">
-          <span className="subtitle">Our Portfolio</span>
-          <h2>Featured <span className="highlight">Installations</span></h2>
+          <span className="subtitle">Our Work</span>
+          <h2>Recent <span className="highlight">Installations</span></h2>
           <p className="header-desc">
             Explore our recent projects across Tamil Nadu, showcasing our expertise in delivering high-performance solar solutions.
           </p>
