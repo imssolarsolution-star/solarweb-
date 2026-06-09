@@ -48,11 +48,11 @@
   }
   
   .brand-logo {
-    height: 60px;
+    height: 50px;
   }
   
   .navbar.scrolled .brand-logo {
-    height: 52px;
+    height: 42px;
   }
 }
 
@@ -121,6 +121,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
 @media (min-width: 992px) {
