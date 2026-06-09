@@ -89,3 +89,24 @@
 [data-theme='dark'] .wa-option:hover {
   background: #25D366;
 }
+
+@media (max-width: 768px) {
+  .floating-widgets {
+    bottom: 1rem;
+    right: 1rem;
+    gap: 0.75rem;
+  }
+  .float-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .float-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+  .wa-options {
+    bottom: 65px;
+    width: 220px;
+    padding: 1rem;
+  }
+}

@@ -71,3 +71,15 @@
   margin: 0;
   font-size: 1.25rem;
 }
+
+@media (max-width: 768px) {
+  .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 1.25rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 40%, transparent);
+  }
+  .gallery-item {
+    height: 250px;
+  }
+}

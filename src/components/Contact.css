@@ -132,3 +132,16 @@
   box-shadow: var(--shadow-md);
   height: 400px;
 }
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+}

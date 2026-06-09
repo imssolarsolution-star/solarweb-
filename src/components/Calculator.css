@@ -160,3 +160,16 @@ input[type=range]::-webkit-slider-runnable-track {
   font-style: italic;
   line-height: 1.5;
 }
+
+@media (max-width: 576px) {
+  .glass-dark {
+    padding: 1.5rem;
+  }
+  .result-item {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .result-text .value {
+    font-size: 1.25rem;
+  }
+}
