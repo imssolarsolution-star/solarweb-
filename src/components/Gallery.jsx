@@ -18,7 +18,7 @@ const Gallery = () => {
   const allProjects = galleryImages.map((path, idx) => ({
     id: `all-${idx + 1}`,
     image: path,
-    title: `Installation #${idx + 1}`,
+    title: 'Installation',
     category: 'Project Gallery',
   }));
 
