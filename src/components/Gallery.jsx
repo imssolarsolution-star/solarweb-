@@ -2,8 +2,8 @@ import React from 'react';
 import './Gallery.css';
 
 const Gallery = () => {
-  // We have 13 work photos in public/Photos
-  const projects = Array.from({ length: 13 }, (_, i) => ({
+  // We have 11 work photos in public/Photos
+  const projects = Array.from({ length: 11 }, (_, i) => ({
     id: i + 1,
     image: `/Photos/work-${i + 1}.jpeg`,
     title: 'Solar Installation',
