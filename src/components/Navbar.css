@@ -5,11 +5,11 @@
   width: 100%;
   z-index: 1000;
   transition: all var(--transition-normal);
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
 }
 
 .navbar.scrolled {
-  padding: 1rem 0;
+  padding: 0.4rem 0;
   box-shadow: var(--shadow-sm);
 }
 
@@ -21,25 +21,27 @@
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.2rem;
   text-decoration: none;
 }
 
 .logo-text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  text-align: center;
+  line-height: 1.1;
 }
 
 .logo-name {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 850;
   color: var(--color-primary);
   letter-spacing: -0.5px;
-  line-height: 1;
 }
 
 [data-theme='dark'] .logo-name {
@@ -47,16 +49,15 @@
 }
 
 .logo-sub {
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   color: var(--color-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   font-weight: 700;
-  line-height: 1;
 }
 
 .brand-logo {
-  height: 44px;
+  height: 38px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -64,17 +65,14 @@
 
 @media (max-width: 480px) {
   .brand-logo {
-    height: 36px;
+    height: 30px;
   }
   .logo-name {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   .logo-sub {
-    font-size: 0.75rem;
-    letter-spacing: 0.3px;
-  }
-  .logo-text {
-    gap: 0.25rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.5px;
   }
 }
 
