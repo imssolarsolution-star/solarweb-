@@ -27,32 +27,50 @@
   z-index: 10;
 }
 
-.brand-logo {
-  height: 75px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  transition: height var(--transition-normal);
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
 
-.navbar.scrolled .brand-logo {
-  height: 60px;
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -1px;
+  transition: all var(--transition-normal);
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: -2px;
+}
+
+.navbar.scrolled .logo-name {
+  font-size: 1.5rem;
+}
+
+[data-theme='dark'] .logo-name {
+  color: #fff;
+}
+
+.navbar:not(.scrolled) .logo-name {
+  color: #fff !important;
 }
 
 @media (max-width: 991px) {
-  .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  
+  .logo-name {
+    font-size: 1.5rem;
   }
   
-  .brand-logo {
-    height: 50px;
-  }
-  
-  .navbar.scrolled .brand-logo {
-    height: 42px;
+  .navbar.scrolled .logo-name {
+    font-size: 1.25rem;
   }
 }
 

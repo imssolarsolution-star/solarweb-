@@ -13,6 +13,7 @@ const Hero = () => {
       
       <div className="container hero-content">
         <div className="hero-text animate-fade-in">
+          <img src="/logo.png" alt="ims solar solutions logo" className="hero-page-logo" />
           <div className="badge">Powering Tamil Nadu</div>
           <h1>
             World-Class Solar Energy for a <span className="highlight">Brighter Future</span>
