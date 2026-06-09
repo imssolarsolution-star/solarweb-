@@ -28,7 +28,10 @@ const Navbar = ({ theme, toggleTheme }) => {
       <div className="container nav-container">
         <a href="#home" className="logo">
           <img src="/logo.png" alt="ims solar solutions" className="brand-logo" />
-          ims <span>solar solutions</span>
+          <div className="logo-text">
+            <span className="logo-name">ims</span>
+            <span className="logo-sub">solar solutions</span>
+          </div>
         </a>
 
         <div className="desktop-nav">
