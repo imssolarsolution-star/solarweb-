@@ -181,3 +181,22 @@
 .w-full {
   width: 100%;
 }
+
+/* Transparent (not scrolled) navbar contrast fixes */
+.navbar:not(.scrolled) .logo-name {
+  color: #fff !important;
+}
+.navbar:not(.scrolled) .nav-links a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.navbar:not(.scrolled) .nav-links a:hover {
+  color: var(--color-accent) !important;
+}
+.navbar:not(.scrolled) .theme-toggle,
+.navbar:not(.scrolled) .menu-btn {
+  color: #fff !important;
+}
+.navbar:not(.scrolled) .theme-toggle:hover,
+.navbar:not(.scrolled) .menu-btn:hover {
+  color: var(--color-accent) !important;
+}
