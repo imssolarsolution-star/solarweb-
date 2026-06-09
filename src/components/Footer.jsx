@@ -8,6 +8,7 @@ const Footer = () => {
       <div className="container footer-content">
         <div className="footer-col brand-col">
           <a href="#home" className="footer-logo">
+            <img src="/logo.png" alt="ims solar solutions" className="brand-logo" />
             ims <span>solar solutions</span>
           </a>
           <p className="footer-desc">

@@ -27,6 +27,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled glass' : ''}`}>
       <div className="container nav-container">
         <a href="#home" className="logo">
+          <img src="/logo.png" alt="ims solar solutions" className="brand-logo" />
           ims <span>solar solutions</span>
         </a>
 
