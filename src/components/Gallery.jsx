@@ -3,32 +3,15 @@ import './Gallery.css';
 import { galleryImages } from './galleryData';
 
 const Gallery = () => {
-  const [activeTab, setActiveTab] = useState('featured');
   const [visibleCount, setVisibleCount] = useState(12);
 
-  // 11 Featured Photos
-  const featuredProjects = Array.from({ length: 11 }, (_, i) => ({
-    id: `featured-${i + 1}`,
-    image: `/Photos/work-${i + 1}.jpeg`,
-    title: 'Solar Installation',
-    category: 'Featured Work',
-  }));
-
-  // 72 All Photos
-  const allProjects = galleryImages.map((path, idx) => ({
+  // All Photos from user folder
+  const displayedProjects = galleryImages.slice(0, visibleCount).map((path, idx) => ({
     id: `all-${idx + 1}`,
     image: path,
     title: 'Installation',
     category: 'Project Gallery',
   }));
-
-  const activeProjects = activeTab === 'featured' ? featuredProjects : allProjects;
-  const displayedProjects = activeProjects.slice(0, visibleCount);
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setVisibleCount(12); // reset visible count when changing tabs
-  };
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 12);
@@ -45,22 +28,6 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Tab Filters */}
-        <div className="gallery-tabs">
-          <button 
-            className={`tab-btn ${activeTab === 'featured' ? 'active' : ''}`}
-            onClick={() => handleTabChange('featured')}
-          >
-            Featured Projects ({featuredProjects.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'all' ? 'active' : ''}`}
-            onClick={() => handleTabChange('all')}
-          >
-            All Installations ({allProjects.length})
-          </button>
-        </div>
-
         <div className="gallery-grid">
           {displayedProjects.map((project, idx) => (
             <div key={project.id} className="gallery-item reveal" style={{transitionDelay: `${(idx % 3) * 150}ms`}}>
@@ -74,7 +41,7 @@ const Gallery = () => {
         </div>
 
         {/* Load More Button */}
-        {visibleCount < activeProjects.length && (
+        {visibleCount < galleryImages.length && (
           <div className="load-more-container">
             <button className="btn btn-primary" onClick={handleLoadMore}>
               Load More Photos

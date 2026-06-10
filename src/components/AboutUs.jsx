@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
 import './AboutUs.css';
-import resSolar from '../assets/residential_solar_1780934831950.png';
+import resSolar from '../assets/cover.jpeg';
 
 const AboutUs = () => {
   return (
@@ -9,7 +9,7 @@ const AboutUs = () => {
       <div className="container">
         <div className="about-grid">
           <div className="about-image-wrapper reveal">
-            <img src={resSolar} alt="Residential Solar Installation" className="about-image" />
+            <img src={resSolar} alt="ims solar solutions" className="about-image" />
             <div className="experience-badge glass">
               <span className="years">10+</span>
               <span className="text">Years of<br/>Experience</span>
